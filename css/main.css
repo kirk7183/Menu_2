@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+:root {
+  --text-primary: #000;
+  --text-secondary: #fff;
+  --bg-primary: #0100e8;
+  --bg-secondary: #d20001;
+  --bg-alternative: #fff;
+}
+
+*,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*when its kliked NOT TO BE active (when need to take off meni from screen)*/
+ul {
+  position: fixed;
+  bottom: -100%;
+  left: 0px;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 -5px 5px -5px #333;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+/*when its kliked to be active (when need to show meni)*/
+ul.active {
+  bottom: 0;
+}
+
+li {
+  list-style: none;
+  padding: 5px 0;
+}
+li.active a {
+  color: var(--text-primary);
+}
+a {
+  color: gray;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.hamburger {
+  display: inline-block;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 5px;
+  border: 1px solid var(--text-primary);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 3px;
+  background-color: black;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  -webkit-transform: translateY(6px) rotate(45deg);
+  -moz-transform: translateY(6px) rotate(45deg);
+  -ms-transform: translateY(6px) rotate(45deg);
+  -o-transform: translateY(6px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+  -moz-transform: translateY(-6px) rotate(-45deg);
+  -ms-transform: translateY(-6px) rotate(-45deg);
+  -o-transform: translateY(-6px) rotate(-45deg);
+}
